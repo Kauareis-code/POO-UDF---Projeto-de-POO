@@ -1,0 +1,139 @@
+
+
+body {
+    margin: 0;
+    font-family: 'Comfortaa', cursive;
+    background-color: #fff;
+    color: #000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between; /* joga logo à esquerda e nav à direita */
+    align-items: center;
+    padding: 20px 50px;
+}
+
+.logo img {
+    width: 60px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    margin: 0; /* remove margens padrão */
+    padding: 0; /* remove padding padrão */
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+}
+
+nav a.btn-outline-primary {
+    background-color: #000;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 50px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 500px;
+}
+
+.stars img,
+.illustration img {
+    width: 150px;
+}
+
+.wave {
+    width: 100%;
+    height: 100px;
+    background: black;
+    border-top-left-radius: 50% 20%;
+    border-top-right-radius: 50% 20%;
+}
+
+
+.EstrelaCadente {
+    position: absolute; /* fixa no topo */
+    top: 0;
+    left: 50%;
+    width: 400px; /* largura máxima da div */
+    height: auto; /* altura ajustável */
+    z-index: 10; /* garante que fique acima de outros elementos */
+    margin-left: -600px;
+}
+
+.EstrelaCadente img {
+    width: 100%; /* faz a imagem ocupar toda a largura da div */
+    height: auto; /* mantém proporção */
+    display: block; /* remove espaçamento indesejado */
+}
+
+.ilustracao {
+  position: fixed;
+  top: 50%;
+  right: 30px; /* afasta 20 pixels da borda direita */
+  transform: translateY(-50%);
+}
+
+
+.textos {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  max-width: 600px; /* aumentei aqui */
+  font-family: 'Comfortaa', cursive;
+  color: #000000;
+}
+
+.textos h1 {
+  margin: 0 0 10px 0;
+  font-size: 2.5rem;
+}
+
+.textos .subtexto {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.8;
+}
+
+.EfeitoVisual {
+  position: fixed;
+  bottom: -60px; /* joga 20px para baixo, fora da tela */
+  left: 0;
+  width: 115vw; /* aumenta a largura para 120% da viewport */
+  margin-left: -10vw; /* puxa a div para a esquerda para centralizar o excesso */
+  z-index: 10;
+  overflow: hidden;
+  text-align: center;
+}
+
+.EfeitoVisual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  margin: 0;
+  padding: 0;
+}

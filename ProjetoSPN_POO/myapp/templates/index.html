@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>SPN</title>
+    <link rel="stylesheet" href="{% static 'CSS/home.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <img src="{% static 'IMG/Loging_Cadastro/Logo.svg' %}" alt="Logo SPN" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Sobre nós</a></li>
+          <li><a href="#">Como funciona</a></li>
+          <li><a href="#">Contatos importantes</a></li>
+          <a class="btn btn-outline-primary" href="{% url 'login' %}">Entrar na comunidade</a>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="textos">
+        <h1>Bem-vindo ao SPN</h1>
+        <p class="subtexto">
+          Um site dedicado a promover saúde e bem-estar para pessoas
+          neurodivergentes
+        </p>
+      </div>
+
+      <div class="EstrelaCadente">
+        <img src="{% static 'IMG/home/estrela cadente.svg' %}" alt="" />
+      </div>
+
+      <div class="ilustracao">
+        <img src="{% static 'IMG/home/ilustração.svg' %}" alt="" />
+      </div>
+      <div class="EfeitoVisual">
+        <img
+          src="{% static 'IMG/home/efeito visual.svg' %}"
+          alt="efeito visual"
+        />
+      </div>
+    </main>
+  </body>
+</html>

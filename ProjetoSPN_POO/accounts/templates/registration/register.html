@@ -1,0 +1,157 @@
+{% load static %}
+<!-- Carregamento do template tag static para arquivos estáticos -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastre-se</title>
+    <!-- CSS via static -->
+    <link rel="stylesheet" href="{% static 'CSS/register.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <main class="login-wrapper">
+      <section class="login-image" aria-label="Ilustração de apoio ao login">
+        <img
+          src="{% static 'IMG/Loging_Cadastro/ilustração_cadastro.svg' %}"
+          alt="Ilustração de apoio ao login"
+        />
+      </section>
+
+      <section class="login-container">
+        <header>
+          <img
+            src="{% static 'IMG/Loging_Cadastro/Logo.svg' %}"
+            alt="Logo SPN"
+            class="logo"
+          />
+          <h1>Criando sua conta na comunidade SPN</h1>
+        </header>
+
+        <nav class="social-icons" aria-label="Entrar com redes sociais">
+          <button class="social-button" title="Login com Google" type="button">
+            <img
+              src="{% static 'IMG/Loging_Cadastro/google.svg' %}"
+              alt="Google"
+            />
+            Google
+          </button>
+          <button
+            class="social-button"
+            title="Login com Facebook"
+            type="button"
+          >
+            <img
+              src="{% static 'IMG/Loging_Cadastro/facebook.svg' %}"
+              alt="Facebook"
+            />
+            Facebook
+          </button>
+          <button class="social-button" title="Login com Twitter" type="button">
+            <img
+              src="{% static 'IMG/Loging_Cadastro/twitter.svg' %}"
+              alt="Twitter"
+            />
+            Twitter
+          </button>
+        </nav>
+
+        <div class="divider"></div>
+
+        <!-- Formulário com action usando a URL reversa do Django -->
+        <form
+          action="{% url 'login' %}"
+          method="post"
+          aria-label="Formulário de login"
+        >
+          {% csrf_token %}
+          <div class="form-row">
+            <div class="user-field">
+              <input
+                type="text"
+                id="user"
+                name="user"
+                placeholder="Usuário"
+                required
+                aria-label="Usuário"
+              />
+            </div>
+
+            <div class="password-field">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Senha"
+                required
+                aria-label="Senha"
+              />
+              <button
+                type="button"
+                class="toggle-password"
+                aria-pressed="false"
+                aria-label="Mostrar ou ocultar senha"
+                onclick="togglePassword()"
+              >
+                <img
+                  src="{% static 'IMG/Loging_Cadastro/VisualizaçãoDesativada.svg' %}"
+                  alt="Mostrar senha"
+                />
+              </button>
+            </div>
+          </div>
+
+          <div class="email-row">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Email"
+              required
+              aria-label="Email"
+            />
+          </div>
+
+          <button type="submit" class="login-button">Login</button>
+        </form>
+
+        <div class="form-description">
+          <label class="checkbox-container">
+            <input type="checkbox" name="aceite" required />
+            <span class="checkmark"></span>
+            <p>Eu aceito os termos e condições de uso do site</p>
+          </label>
+        </div>
+
+        <footer class="register-link">
+          <p>
+            Você já possui uma conta?
+            <a href="{% url 'login' %}">Faça seu login</a>
+          </p>
+        </footer>
+      </section>
+    </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const toggleButton = document.querySelector('.toggle-password');
+        const passwordInput = document.getElementById('password');
+        const toggleIcon = toggleButton.querySelector('img');
+
+        toggleButton.addEventListener('click', function () {
+          const isPassword = passwordInput.type === 'password';
+          passwordInput.type = isPassword ? 'text' : 'password';
+          toggleIcon.alt = isPassword ? 'Ocultar senha' : 'Mostrar senha';
+          toggleIcon.src = isPassword
+            ? '/static/IMG/Loging_Cadastro/VisualizaçãoAtivada.svg'
+            : '/static/IMG/Loging_Cadastro/VisualizaçãoDesativada.svg';
+        });
+      });
+    </script>
+  </body>
+</html>

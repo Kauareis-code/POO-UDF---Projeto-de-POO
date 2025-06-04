@@ -1,0 +1,238 @@
+body {
+    margin: 0;
+    font-family: 'Comfortaa', sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: flex-start;
+    /* alinha à esquerda */
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    /* impede rolagem */
+    padding-left: 5vw;
+    /* margem da esquerda */
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: space-around;
+    /* Alinha os itens nas extremidades */
+    align-items: center;
+    /* Alinha verticalmente ao centro */
+    height: 100vh;
+    /* Altura total da tela */
+}
+
+.login-image {
+    justify-content: flex-end;
+    /* Alinha a imagem à direita */
+    flex: 1;
+    /* Permite que a imagem ocupe espaço */
+    display: flex;
+    padding-right: 10vw;
+    /* Margem da direita, se necessário */
+    ;
+}
+
+.login-image img {
+    margin-top: 20%;
+    max-width: 100%;
+    /* Garante que a imagem não ultrapasse a largura do contêiner */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    width: 90%;
+    /* Ajuste a largura conforme necessário */
+    margin-left: 20px;
+    /* Adicione uma margem à esquerda para empurrar a imagem */
+    transform: translateX(125px);
+    /* ou 5vw */
+}
+
+.login-container {
+    flex: 1;
+    /* Permite que o container de login ocupe espaço */
+    text-align: center;
+
+    max-width: 480px;
+    /* ou 500px, 600px — ajuste conforme o visual desejado */
+    width: 100%;
+    padding: 2rem;
+}
+
+.logo {
+    display: block;
+    margin: 0 auto 1.5rem auto;
+}
+
+h1 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input {
+    padding: 1rem;
+    border-radius: 50px;
+    border: 1px solid #000;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 0.9rem;
+}
+
+input:focus {
+    border-color: #3e008f;
+    outline: none;
+}
+
+.forgot-password {
+    text-align: right;
+    font-size: 0.8rem;
+}
+
+.forgot-password a {
+    text-decoration: none;
+    color: #000;
+}
+
+.password-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-field input {
+    flex: 1;
+    padding-right: 40px;
+    /* espaço para o botão */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toggle-password img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    pointer-events: none;
+    margin-right: 1rem;
+}
+
+.login-button {
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    background-color: #000;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #000000;
+}
+
+.divider:not(:empty)::before {
+    margin-right: 0.75em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: 0.75em;
+}
+
+.social-icons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 16px;
+}
+
+.register-link {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+}
+
+.register-link a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.circle {
+    border: none;
+    /* <- Remove qualquer borda */
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #000000;
+    /* bola preta */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.circle:hover {
+    transform: scale(1.05);
+}
+
+.circle img {
+    width: 32px;
+    height: auto;
+    object-fit: contain;
+}
+
+.circle[title="Login com Twitter"] img {
+    width: 23px;
+    height: auto;
+}
+
+.side-button-nav {
+    position: fixed;
+    top: 20px;            /* distância do topo */
+    right: 20px;          /* distância da borda direita */
+    background-color: #000;
+    border-radius: 50px;
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+.side-button-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: 1rem;
+    display: block;
+    text-align: center;
+    transition: background-color 0.3s, transform 0.2s;
+}
+

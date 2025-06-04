@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>{% block title %}SPN{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+
+    <!-- CSS global -->
+    <link rel="stylesheet" href="{% static 'CSS/base.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <header>
+        {% include 'home.html' %}
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+    </footer>
+
+    <!-- JS global -->
+
+    {% block extra_js %}{% endblock %}
+
+</body>
+</html>

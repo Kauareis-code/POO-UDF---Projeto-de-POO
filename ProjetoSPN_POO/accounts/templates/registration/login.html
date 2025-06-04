@@ -1,0 +1,106 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'CSS/login.css' %}" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <main class="login-wrapper">
+      <section class="login-container">
+        <header>
+          <nav class="side-button-nav">
+            <a class="btn btn-outline-danger" href="{% url 'index' %}">Sair</a>
+          </nav>
+          <img
+            src="{% static 'IMG/Loging_Cadastro/Logo.svg' %}"
+            alt="Logo SPN"
+            class="logo"
+          />
+          <h1>Bem-vindo à comunidade SPN</h1>
+          <p class="subtitle">
+            Um site dedicado a promover saúde e bem-estar para pessoas
+            neurodivergentes
+          </p>
+        </header>
+        <form method="post" aria-label="Formulário de login">
+          {% csrf_token %}
+          <input
+            type="text"
+            name="username"
+            id="id_username"
+            placeholder="Usuário"
+            required
+          />
+          <div class="password-field">
+            <input
+              type="password"
+              name="password"
+              id="id_password"
+              placeholder="Senha"
+              required
+            />
+            <button
+              type="button"
+              class="toggle-password"
+              aria-pressed="false"
+              aria-label="Mostrar ou ocultar senha"
+              onclick="togglePassword()"
+            >
+              <img
+                src="{% static 'IMG/Loging_Cadastro/VisualizaçãoDesativada.svg' %}"
+                alt="Mostrar senha"
+              />
+            </button>
+          </div>
+          <div class="forgot-password">
+            <a href="{% url 'password_reset' %}">Esqueci minha senha</a>
+          </div>
+          <button type="submit" class="login-button">Login</button>
+        </form>
+        <div class="divider">
+          <span>Entrar com outra conta</span>
+        </div>
+        <nav class="social-icons" aria-label="Entrar com redes sociais">
+          <button class="circle" title="Login com Google" type="button">
+            <img
+              src="{% static 'IMG/Loging_Cadastro/google.svg' %}"
+              alt="Google"
+            />
+          </button>
+          <button class="circle" title="Login com Facebook" type="button">
+            <img
+              src="{% static 'IMG/Loging_Cadastro/facebook.svg' %}"
+              alt="Facebook"
+            />
+          </button>
+          <button class="circle" title="Login com Twitter" type="button">
+            <img
+              src="{% static 'IMG/Loging_Cadastro/twitter.svg' %}"
+              alt="Twitter"
+            />
+          </button>
+        </nav>
+        <footer class="register-link">
+          <p>
+            Ainda não é cadastrado? <a href="/register">Se cadastre agora</a>
+          </p>
+        </footer>
+      </section>
+      <section class="login-image" aria-label="Ilustração de apoio ao login">
+        <img
+          src="{% static 'IMG/Loging_Cadastro/ilustração_login.svg' %}"
+          alt="Ilustração de apoio ao login"
+        />
+      </section>
+    </main>
+    <script src="{% static 'JS/togglePassword.js' %}"></script>
+  </body>
+</html>
